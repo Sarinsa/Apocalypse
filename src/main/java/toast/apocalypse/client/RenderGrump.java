@@ -4,14 +4,14 @@ import net.minecraft.client.renderer.entity.RenderGhast;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.ResourceLocation;
-import toast.apocalypse.ApocalypseMod;
+import toast.apocalypse.core.ApocalypseMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderGrump extends RenderGhast {
 
-    public static final ResourceLocation GRUMP_TEXTURE = new ResourceLocation(ApocalypseMod.TEXTURE_PATH + "entity/grump.png");
+    public static final ResourceLocation GRUMP_TEXTURE = ApocalypseMod.resourceLoc("textures/entity/grump.png");
 
     public RenderGrump() {
         super();

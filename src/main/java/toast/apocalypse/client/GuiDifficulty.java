@@ -6,9 +6,9 @@ import net.minecraftforge.common.MinecraftForge;
 
 import org.lwjgl.opengl.GL11;
 
-import toast.apocalypse.PropHelper;
-import toast.apocalypse.Properties;
-import toast.apocalypse.WorldDifficultyManager;
+import toast.apocalypse.core.config.PropHelper;
+import toast.apocalypse.core.config.Properties;
+import toast.apocalypse.core.WorldDifficultyManager;
 import cpw.mods.fml.client.FMLClientHandler;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;

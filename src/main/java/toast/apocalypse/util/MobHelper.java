@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.util;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.Entity;

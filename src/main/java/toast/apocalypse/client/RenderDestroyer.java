@@ -7,7 +7,7 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import toast.apocalypse.ApocalypseMod;
+import toast.apocalypse.core.ApocalypseMod;
 import toast.apocalypse.entity.EntityDestroyer;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
@@ -15,8 +15,8 @@ import cpw.mods.fml.relauncher.SideOnly;
 @SideOnly(Side.CLIENT)
 public class RenderDestroyer extends RenderGhast {
 
-    public static final ResourceLocation DESTROYER_TEXTURE = new ResourceLocation(ApocalypseMod.TEXTURE_PATH + "entity/destroyer.png");
-    public static final ResourceLocation DESTROYER_FIRE_TEXTURE = new ResourceLocation(ApocalypseMod.TEXTURE_PATH + "entity/destroyer_fire.png");
+    public static final ResourceLocation DESTROYER_TEXTURE = ApocalypseMod.resourceLoc("textures/entity/destroyer.png");
+    public static final ResourceLocation DESTROYER_FIRE_TEXTURE = ApocalypseMod.resourceLoc("textures/entity/destroyer_fire.png");
 
     public RenderDestroyer() {
         super();

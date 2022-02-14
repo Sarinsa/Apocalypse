@@ -10,8 +10,8 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import toast.apocalypse.MobHelper;
-import toast.apocalypse.WorldDifficultyManager;
+import toast.apocalypse.util.MobHelper;
+import toast.apocalypse.core.WorldDifficultyManager;
 
 /**
  * This is a full moon mob whose entire goal in life is to break through your defenses. It is similar to a ghast, only

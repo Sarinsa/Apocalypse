@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.core.config;
 
 import java.util.HashSet;
 
@@ -179,4 +179,7 @@ public class PropHelper {
     }
 
     private PropHelper() {}
+
+    // Funnie classloading
+    public static void init() {}
 }

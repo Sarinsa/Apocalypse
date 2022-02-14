@@ -10,8 +10,8 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.world.World;
-import toast.apocalypse.MobHelper;
-import toast.apocalypse.WorldDifficultyManager;
+import toast.apocalypse.util.MobHelper;
+import toast.apocalypse.core.WorldDifficultyManager;
 
 /**
  * This is a full moon mob identical to a creeper in almost every way, except that it has a much farther aggro range

@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.core;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -24,6 +24,10 @@ import net.minecraftforge.event.entity.player.PlayerSleepInBedEvent;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import cpw.mods.fml.common.eventhandler.EventPriority;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
+import toast.apocalypse.core.register.ApocalypseItems;
+import toast.apocalypse.util.EquipmentHelper;
+import toast.apocalypse.util.NameHelper;
+import toast.apocalypse.core.config.PropHelper;
 
 /**
  * Used for handling any needed game events, such as game ticks and mob spawns.
@@ -63,7 +67,7 @@ public class EventHandler {
                 float damage = 1.0F;
                 ItemStack helmet = player.getEquipmentInSlot(4);
                 if (helmet != null) {
-                    if (helmet.getItem() == ApocalypseMod.bucketHelm) {
+                    if (helmet.getItem() == ApocalypseItems.BUCKET_HELMET) {
                         damage = 0.0F;
                     }
                     else {
@@ -73,7 +77,7 @@ public class EventHandler {
                         helmet.setItemDamage(helmet.getItemDamageForDisplay() + player.getRNG().nextInt(2));
                         if (helmet.getItemDamageForDisplay() >= helmet.getMaxDamage()) {
                             player.renderBrokenItemStack(helmet);
-                            player.setCurrentItemOrArmor(4, (ItemStack) null);
+                            player.setCurrentItemOrArmor(4, null);
                         }
                     }
                 }

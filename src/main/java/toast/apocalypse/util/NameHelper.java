@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.util;
 
 import java.util.Random;
 

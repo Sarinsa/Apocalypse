@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -8,6 +8,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ForgeHooks;
+import toast.apocalypse.core.config.PropHelper;
 
 /**
  * Used to determine whether mobs can harvest blocks and how fast they can break them.

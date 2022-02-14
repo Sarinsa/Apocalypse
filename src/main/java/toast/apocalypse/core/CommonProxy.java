@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.core;
 
 /**
  * Handles tasks that should be done differently depending on the side they are called from in a way that is safe

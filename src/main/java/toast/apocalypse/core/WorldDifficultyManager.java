@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.core;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -18,6 +18,8 @@ import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import toast.apocalypse.network.NetworkHelper;
+import toast.apocalypse.network.message.MessageWorldDifficulty;
 import toast.apocalypse.event.EventBase;
 import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.EventPriority;
@@ -26,6 +28,7 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import toast.apocalypse.core.config.PropHelper;
 
 /**
  * The major backbone of Apocalypse, this class manages everything to do with the world difficulty - increases it over time,
@@ -131,12 +134,12 @@ public class WorldDifficultyManager {
     /** Saves the world's difficulty and updates the clients, if needed. */
     private static void updateWorldDifficulty() {
         if (WorldDifficultyManager.difficultyRateMult != WorldDifficultyManager.lastDifficultyRateMult) {
-            ApocalypseMod.CHANNEL.sendToAll(new MessageWorldDifficulty(WorldDifficultyManager.difficultyRateMult));
+            NetworkHelper.sendMultiplierUpdateAll(difficultyRateMult);
             WorldDifficultyManager.lastDifficultyRateMult = WorldDifficultyManager.difficultyRateMult;
         }
         if (WorldDifficultyManager.activeEvent != null || WorldDifficultyManager.worldDifficulty != WorldDifficultyManager.lastWorldDifficulty) {
             if ((int) (WorldDifficultyManager.worldDifficulty / 24000L) != (int) (WorldDifficultyManager.lastWorldDifficulty / 24000L) || (int) (WorldDifficultyManager.worldDifficulty % 24000L / 2400) != (int) (WorldDifficultyManager.lastWorldDifficulty % 24000L / 2400)) {
-                ApocalypseMod.CHANNEL.sendToAll(new MessageWorldDifficulty(WorldDifficultyManager.worldDifficulty));
+                NetworkHelper.sendDifficultyUpdateAll(worldDifficulty);
             }
             WorldDifficultyManager.lastWorldDifficulty = WorldDifficultyManager.worldDifficulty;
             WorldDifficultyManager.save();
@@ -247,7 +250,7 @@ public class WorldDifficultyManager {
         }
 
         if (worldData == null) {
-            WorldDifficultyManager.WORLD_MAP.put(Integer.valueOf(world.provider.dimensionId), worldData = new WorldDifficultyData(world.provider.dimensionId));
+            WorldDifficultyManager.WORLD_MAP.put(world.provider.dimensionId, worldData = new WorldDifficultyData(world.provider.dimensionId));
         }
         worldData.lastWorldTime = world.getWorldTime();
 
@@ -305,7 +308,7 @@ public class WorldDifficultyManager {
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         if (event.player instanceof EntityPlayerMP) {
             // Send the current server info to each player as they log in
-            ApocalypseMod.CHANNEL.sendTo(new MessageWorldDifficulty(WorldDifficultyManager.worldDifficulty, WorldDifficultyManager.difficultyRateMult), (EntityPlayerMP) event.player);
+            NetworkHelper.sendDifficultyUpdate(worldDifficulty, difficultyRateMult, (EntityPlayerMP) event.player);
         }
     }
 

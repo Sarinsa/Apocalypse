@@ -35,9 +35,9 @@ public class RenderMonsterFishHook extends Render {
         GL11.glScalef(0.5F, 0.5F, 0.5F);
         this.bindEntityTexture(fishHook);
         Tessellator tessellator = Tessellator.instance;
-        float minU = (1 * 8 + 0) / 128.0F;
-        float maxU = (1 * 8 + 8) / 128.0F;
-        float minV = (2 * 8 + 0) / 128.0F;
+        float minU = (8) / 128.0F;
+        float maxU = (8 + 8) / 128.0F;
+        float minV = (2 * 8) / 128.0F;
         float maxV = (2 * 8 + 8) / 128.0F;
         GL11.glRotatef(180.0F - this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
         GL11.glRotatef(-this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);

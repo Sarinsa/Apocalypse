@@ -7,15 +7,15 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import toast.apocalypse.ApocalypseMod;
+import toast.apocalypse.core.ApocalypseMod;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class RenderGhost extends RenderLiving {
 
-    public static final ResourceLocation GHOST_TEXTURE = new ResourceLocation(ApocalypseMod.TEXTURE_PATH + "entity/ghost.png");
-    public static final ResourceLocation GHOST_TEXTURE_SOLID = new ResourceLocation(ApocalypseMod.TEXTURE_PATH + "entity/ghost_base.png");
+    public static final ResourceLocation GHOST_TEXTURE = ApocalypseMod.resourceLoc("textures/entity/ghost.png");
+    public static final ResourceLocation GHOST_TEXTURE_SOLID = ApocalypseMod.resourceLoc("textures/entity/ghost_base.png");
 
     public RenderGhost() {
         super(new ModelGhost(), 0.0F);

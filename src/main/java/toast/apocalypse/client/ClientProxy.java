@@ -7,8 +7,8 @@ import net.minecraft.util.ResourceLocation;
 
 import org.lwjgl.opengl.GL11;
 
-import toast.apocalypse.ApocalypseMod;
-import toast.apocalypse.CommonProxy;
+import toast.apocalypse.core.ApocalypseMod;
+import toast.apocalypse.core.CommonProxy;
 import toast.apocalypse.entity.EntityBreecher;
 import toast.apocalypse.entity.EntityDestroyer;
 import toast.apocalypse.entity.EntityDestroyerFireball;
@@ -34,7 +34,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 public class ClientProxy extends CommonProxy {
 
     /** The texture used for the bucket helmet overlay. */
-    public static final ResourceLocation BUCKET_OVERLAY_TEXTURE = new ResourceLocation(ApocalypseMod.TEXTURE_PATH + "misc/bucketblur.png");
+    public static final ResourceLocation BUCKET_OVERLAY_TEXTURE = ApocalypseMod.resourceLoc("textures/misc/bucketblur.png");
 
     @Override
     public void registerRenderers() {

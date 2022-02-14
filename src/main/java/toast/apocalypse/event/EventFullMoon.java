@@ -3,13 +3,14 @@ package toast.apocalypse.event;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.Arrays;
 
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.world.WorldServer;
-import toast.apocalypse.ApocalypseMod;
-import toast.apocalypse.PropHelper;
-import toast.apocalypse.Properties;
-import toast.apocalypse.WorldDifficultyManager;
+import toast.apocalypse.core.ApocalypseMod;
+import toast.apocalypse.core.config.PropHelper;
+import toast.apocalypse.core.config.Properties;
+import toast.apocalypse.core.WorldDifficultyManager;
 import toast.apocalypse.entity.EntityBreecher;
 import toast.apocalypse.entity.EntityDestroyer;
 import toast.apocalypse.entity.EntityGhost;
@@ -135,9 +136,7 @@ public class EventFullMoon extends EventBase {
             }
         }
         if (playerCount == 0) {
-            for (int mobIndex = 0; mobIndex < this.mobs.length; mobIndex++) {
-                this.mobs[mobIndex] = 0;
-            }
+            Arrays.fill(this.mobs, 0);
             return;
         }
 

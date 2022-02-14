@@ -6,10 +6,10 @@ import net.minecraft.entity.Entity;
 
 public class ModelGhost extends ModelBase {
 
-    ModelRenderer head;
-    ModelRenderer body;
-    ModelRenderer armRight;
-    ModelRenderer armLeft;
+    private final ModelRenderer head;
+    private final ModelRenderer body;
+    private final ModelRenderer armRight;
+    private final ModelRenderer armLeft;
 
     public ModelGhost() {
         this.head = new ModelRenderer(this, 0, 0).addBox(-2.0F, -10.0F, -2.0F, 4, 10, 4);

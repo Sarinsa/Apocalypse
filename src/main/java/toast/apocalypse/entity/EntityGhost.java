@@ -9,9 +9,9 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import toast.apocalypse.EventHandler;
-import toast.apocalypse.MobHelper;
-import toast.apocalypse.WorldDifficultyManager;
+import toast.apocalypse.core.EventHandler;
+import toast.apocalypse.util.MobHelper;
+import toast.apocalypse.core.WorldDifficultyManager;
 
 /**
  * This is a full moon mob that has the odd ability to completely ignore blocks. To compliment this, it has

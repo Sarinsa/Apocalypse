@@ -1,9 +1,10 @@
-package toast.apocalypse;
+package toast.apocalypse.network.message;
 
 import io.netty.buffer.ByteBuf;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
+import toast.apocalypse.core.WorldDifficultyManager;
 
 /**
  * A message sent by the server to clients, alerting them to changes in the difficulty level, difficulty rate, or both.

@@ -1,10 +1,11 @@
-package toast.apocalypse;
+package toast.apocalypse.core.config;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.Random;
 
 import net.minecraftforge.common.config.Configuration;
+import toast.apocalypse.core.ApocalypseMod;
 
 /**
  * This helper class automatically creates, stores, and retrieves properties.

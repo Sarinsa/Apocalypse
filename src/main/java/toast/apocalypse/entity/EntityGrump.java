@@ -8,9 +8,9 @@ import net.minecraft.init.Items;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.DamageSource;
 import net.minecraft.world.World;
-import toast.apocalypse.EventHandler;
-import toast.apocalypse.MobHelper;
-import toast.apocalypse.WorldDifficultyManager;
+import toast.apocalypse.core.EventHandler;
+import toast.apocalypse.util.MobHelper;
+import toast.apocalypse.core.WorldDifficultyManager;
 
 /**
  * This is a full moon mob that is meant to be a high threat to players that are not in a safe area from them.

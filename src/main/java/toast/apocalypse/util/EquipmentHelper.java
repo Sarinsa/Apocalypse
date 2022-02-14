@@ -1,4 +1,4 @@
-package toast.apocalypse;
+package toast.apocalypse.util;
 
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.EntityLivingBase;
@@ -8,6 +8,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.potion.PotionEffect;
+import toast.apocalypse.core.ApocalypseMod;
+import toast.apocalypse.core.config.PropHelper;
 
 /**
  * Contains various helper methods used to set up equipment on mobs.
