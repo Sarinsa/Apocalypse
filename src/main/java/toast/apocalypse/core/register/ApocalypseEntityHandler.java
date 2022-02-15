@@ -13,7 +13,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ApocalypseEntities {
+public class ApocalypseEntityHandler {
 
     private static final Map<Class<? extends EntityLiving>, Integer[]> EGG_INFO = new HashMap<Class<? extends EntityLiving>, Integer[]>();
 

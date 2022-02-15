@@ -9,7 +9,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import toast.apocalypse.command.CommandSetDifficulty;
 import toast.apocalypse.network.PacketHandler;
-import toast.apocalypse.core.register.ApocalypseEntities;
+import toast.apocalypse.core.register.ApocalypseEntityHandler;
 import toast.apocalypse.core.register.ApocalypseItems;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
@@ -78,7 +78,7 @@ public class ApocalypseMod {
     public void init(FMLInitializationEvent event) {
         new WorldDifficultyManager();
         new EventHandler();
-        ApocalypseEntities.registerEntities(this);
+        ApocalypseEntityHandler.registerEntities(this);
         ApocalypseMod.proxy.registerRenderers();
 
         GameRegistry.addShapelessRecipe(new ItemStack(ApocalypseItems.BUCKET_HELMET), Items.bucket);
